@@ -69,4 +69,7 @@ body {
   body {
     @apply bg-background text-foreground;
   }
+  .title {
+    @apply font-inriaSerif text-2xl lg:text-4xl font-bold text-[#C3910A];
+  }
 }

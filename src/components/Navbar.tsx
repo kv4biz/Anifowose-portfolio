@@ -67,7 +67,7 @@ const Navbar: React.FC<NavbarProps> = ({
   const isActive = (item: NavItem) => activeSection === item.section;
 
   // Custom smooth scrolling function.
-  const smoothScrollTo = (target: HTMLElement, duration: number = 1500) => {
+  const smoothScrollTo = (target: HTMLElement, duration: number = 1000) => {
     const startY = window.pageYOffset;
     const targetY = target.getBoundingClientRect().top + startY;
     const distanceY = targetY - startY;
@@ -117,11 +117,11 @@ const Navbar: React.FC<NavbarProps> = ({
       const targetId = item.href.substring(1);
       const targetElement = document.getElementById(targetId);
       if (targetElement) {
-        smoothScrollTo(targetElement, 1500);
+        smoothScrollTo(targetElement, 1000);
         setActiveSection(item.section || "home");
       }
       if (isSheetOpen) {
-        setTimeout(() => setIsSheetOpen(false), 2000);
+        setTimeout(() => setIsSheetOpen(false), 100);
       }
     };
 
@@ -139,13 +139,13 @@ const Navbar: React.FC<NavbarProps> = ({
   if (scrolled) {
     headerBgClass =
       headerVariant === "blue"
-        ? "bg-[#354569]"
-        : "bg-[#354569] lg:bg-white/75 backdrop-blur-md";
+        ? "bg-[#133679]"
+        : "bg-[#133679] lg:bg-white/85 backdrop-blur-md";
   }
 
   return (
     <header
-      className={`fixed top-0 left-0 w-full z-50 ${headerBgClass} px-10 md:px-16 lg:px-28 py-3 transition-colors duration-300`}
+      className={`fixed top-0 left-0 w-full z-50 ${headerBgClass} px-10 md:px-16 lg:px-28 py-2 transition-colors duration-300`}
     >
       <div className="container mx-auto flex items-center justify-between">
         {/* Logo */}
@@ -166,12 +166,12 @@ const Navbar: React.FC<NavbarProps> = ({
                   className={`${linkBaseClass} ${textColorClass} flex flex-col group`}
                 >
                   <span
-                    className={` ${isActive(item) ? "text-[#354569]" : ""}`}
+                    className={` ${isActive(item) ? "lg:text-[#133679]" : ""}`}
                   >
                     {item.label}
                   </span>
                   <span
-                    className={`block h-0.5 bg-[#354569] transition-all duration-300 mt-1 ${
+                    className={`block h-0.5 bg-white lg:bg-[#133679] transition-all duration-300 mt-1 ${
                       isActive(item) ? "w-full" : "w-0"
                     }`}
                   ></span>
@@ -200,7 +200,7 @@ const Navbar: React.FC<NavbarProps> = ({
                   >
                     <span>{item.label}</span>
                     <span
-                      className={`block h-0.5 bg-[#354569] transition-all duration-300 mt-1 ${
+                      className={`block h-0.5 bg-[#133679] transition-all duration-300 mt-1 ${
                         isActive(item) ? "w-full" : "w-0 group-hover:w-full"
                       }`}
                     ></span>

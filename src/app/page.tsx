@@ -1,4 +1,6 @@
+import Hero from "@/components/Hero";
 import Navbar from "@/components/Navbar";
+import Skills from "@/components/Skills";
 export default function Home() {
   return (
     <div>
@@ -7,19 +9,14 @@ export default function Home() {
         textVariant="black"
         headerVariant="blurishWhite"
       />
-      <div>
+      <div className="flex flex-col w-full">
         {/* Home Section */}
         <section
           id="home"
-          className="min-h-screen flex flex-col items-center justify-center bg-gray-100 px-4"
+          className="flex flex-col w-full items-center justify-center"
         >
-          <div className="text-center">
-            <h1 className="text-4xl font-bold mb-4">Welcome to My Portfolio</h1>
-            <p className="text-lg">
-              I’m Taofil Anifowose, a Chartered Accountant with a passion for
-              excellence.
-            </p>
-          </div>
+          <Hero />
+          <Skills />
         </section>
 
         {/* About Section */}
