@@ -1,36 +1,81 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Taofil Anifowose - Portfolio
 
-## Getting Started
+## 📌 Overview
 
-First, run the development server:
+This is the personal portfolio website for **Taofil Anifowose**, a Chartered Accountant. Built with modern web technologies, it showcases professional experience, projects, and contact information.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## 🚀 Tech Stack
+
+This portfolio is built using:
+
+- **Next.js** – A React framework for optimized performance
+- **ShadCN UI** – A modern component library for beautiful UI
+- **Aceternity UI** – For additional stylish UI components
+- **Magic UI** – For smooth animations and interactions
+- **Tailwind CSS** – For utility-first styling
+
+## 🎨 Figma Design
+
+You can view the design mockup here: [Figma Design](https://www.figma.com/design/PkeI5uD90c1lm3DpMFGbtz/anifowose-portfolio?node-id=180-144&t=P9Ldd9ckGfZu7Zet-0)
+
+## 📂 Project Structure
+
+```
+my-portfolio/
+├── app/
+│   ├── (pages)/
+│   │   ├── layout.tsx  # Root layout
+│   │   ├── page.tsx    # Home page
+│   │   ├── portfolio/  # Portfolio page
+│   │   ├── contact/    # Contact page
+├── components/         # Reusable UI components
+├── constants/          # Static data and config
+├── public/             # Static assets (images, icons, etc.)
+├── styles/             # Global styles and theme
+├── hooks/              # Custom hooks
+└── lib/                # Utility functions
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🛠️ Installation & Setup
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+To run this project locally:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+1. **Clone the repository:**
 
-## Learn More
+   ```sh
+   git clone https://github.com/your-username/my-portfolio.git
+   cd my-portfolio
+   ```
 
-To learn more about Next.js, take a look at the following resources:
+2. **Install dependencies:**
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+   ```sh
+   npm install
+   ```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+3. **Run the development server:**
+   ```sh
+   npm run dev
+   ```
+   The project will be available at `http://localhost:3000/`.
 
-## Deploy on Vercel
+## 🏗️ Features
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- **Landing Page:** Home, About, and Experience sections
+- **Portfolio Page:** Showcasing selected works and achievements
+- **Contact Page:** Form to connect directly
+- **Fully Responsive:** Optimized for all devices
+- **Animations & Interactivity:** Smooth UI experience with Magic UI
+- **SEO Optimized:** Follows best practices for visibility
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 🔥 Contributions
+
+If you'd like to contribute, feel free to fork the repository and submit a pull request!
+
+## 📜 License
+
+This project is licensed under the **MIT License**.
+
+---
+
+**Developed by Kayode Victor | 2025** 🚀
