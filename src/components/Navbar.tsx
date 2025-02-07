@@ -145,7 +145,7 @@ const Navbar: React.FC<NavbarProps> = ({
 
   return (
     <header
-      className={`fixed top-0 left-0 w-full z-50 ${headerBgClass} px-10 md:px-16 lg:px-28 py-2 transition-colors duration-300`}
+      className={`fixed top-0 left-0 w-full z-50 ${headerBgClass} px-4 md:px-10 lg:px-28 py-2 transition-colors duration-300`}
     >
       <div className="container mx-auto flex items-center justify-between">
         {/* Logo */}

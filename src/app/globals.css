@@ -72,4 +72,10 @@ body {
   .title {
     @apply font-inriaSerif text-2xl lg:text-4xl font-bold text-[#C3910A];
   }
+  .title2 {
+    @apply font-inriaSerif  font-bold text-[#C3910A];
+  }
+  .title3 {
+    @apply font-inriaSerif text-2xl lg:text-3xl font-bold;
+  }
 }

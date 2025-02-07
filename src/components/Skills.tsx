@@ -23,7 +23,7 @@ const skills = [
 
 const Skills = () => {
   return (
-    <section className="flex py-10 lg:py-20 px-4 ">
+    <section className="flex py-10 lg:py-10 px-4 ">
       <div className="flex flex-col gap-8 container mx-auto items-center">
         <div className="flex flex-col gap-4 max-w-2xl items-center justify-center text-center">
           <h2 className="title">My Skills</h2>
@@ -40,7 +40,7 @@ const Skills = () => {
               className="p-4 lg:px-8 bg-white border border-gray-300/40 rounded-md"
               style={{ boxShadow: "-4px 4px 8px rgba(0, 0, 0, 0.1)" }}
             >
-              <p className="text-lg font-normal">{skill}</p>
+              <p className="text-sm lg:text-lg font-normal">{skill}</p>
             </div>
           ))}
         </div>

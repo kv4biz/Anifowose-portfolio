@@ -1,6 +1,10 @@
+import About from "@/components/About";
+import Education from "@/components/Education";
+import Experience from "@/components/Experience";
 import Hero from "@/components/Hero";
 import Navbar from "@/components/Navbar";
 import Skills from "@/components/Skills";
+import Trainings from "@/components/Training";
 export default function Home() {
   return (
     <div>
@@ -22,30 +26,19 @@ export default function Home() {
         {/* About Section */}
         <section
           id="about"
-          className="min-h-screen flex flex-col items-center justify-center bg-gray-200 px-4"
+          className="flex flex-col w-full items-center justify-center"
         >
-          <div className="max-w-2xl text-center">
-            <h2 className="text-3xl font-bold mb-4">About Me</h2>
-            <p className="text-lg">
-              With years of experience in financial management, auditing, and
-              strategic planning, I bring a wealth of expertise to every
-              project.
-            </p>
-          </div>
+          <About />
+          <Education />
         </section>
 
         {/* Experience Section */}
         <section
           id="experience"
-          className="min-h-screen flex flex-col items-center justify-center bg-gray-300 px-4"
+          className="flex flex-col w-full items-center justify-center"
         >
-          <div className="max-w-2xl text-center">
-            <h2 className="text-3xl font-bold mb-4">Experience</h2>
-            <p className="text-lg">
-              Over the years, I have worked with various prestigious firms,
-              developing strategies that drive growth and efficiency.
-            </p>
-          </div>
+          <Experience />
+          <Trainings />
         </section>
         {/* pOrtfolio Section */}
         <section
