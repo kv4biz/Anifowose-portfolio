@@ -2,7 +2,14 @@
 
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
+import { usePathname, useRouter } from "next/navigation";
 import { Menu } from "lucide-react";
+import {
+  NavigationMenu,
+  NavigationMenuList,
+  NavigationMenuItem,
+  NavigationMenuLink,
+} from "@/components/ui/navigation-menu";
 import {
   Sheet,
   SheetTrigger,
@@ -36,19 +43,29 @@ interface NavItem {
   section?: string;
 }
 
-const Navbar: React.FC<NavbarProps> = ({
+const Navbar2: React.FC<NavbarProps> = ({
   textVariant = "black",
   headerVariant = "blurishWhite",
   logoVariant = "default",
 }) => {
-  // Since this is a one-page site, pathname is always "/"
+  const pathname = usePathname();
+  const router = useRouter();
+
+  // Track active homepage section (for in-page links such as "#home", "#about", etc.)
   const [activeSection, setActiveSection] = useState<string>("home");
+
+  // State for header background based on scroll position.
   const [scrolled, setScrolled] = useState<boolean>(false);
+
+  // State to control the mobile sheet open/close.
   const [isSheetOpen, setIsSheetOpen] = useState<boolean>(false);
 
-  // Update header background based on scroll.
+  // Update 'scrolled' state when the user scrolls.
   useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 50);
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 50);
+    };
+
     window.addEventListener("scroll", handleScroll);
     handleScroll();
     return () => window.removeEventListener("scroll", handleScroll);
@@ -60,19 +77,25 @@ const Navbar: React.FC<NavbarProps> = ({
     { label: "About", href: "#about", section: "about" },
     { label: "Experience", href: "#experience", section: "experience" },
     { label: "Portfolio", href: "#portfolio", section: "portfolio" },
-    { label: "Contacts", href: "#contact", section: "contact" },
+    { label: "Contacts", href: "/contact" },
   ];
 
-  // Returns true if the link's section matches the activeSection.
-  const isActive = (item: NavItem) => activeSection === item.section;
+  // Determines if a nav item is "active."
+  const isActive = (item: NavItem) => {
+    if (item.href.startsWith("#") && pathname === "/") {
+      return activeSection === item.section;
+    }
+    return pathname === item.href;
+  };
 
   // Custom smooth scrolling function.
-  const smoothScrollTo = (target: HTMLElement, duration: number = 1500) => {
+  const smoothScrollTo = (target: HTMLElement, duration: number = 1000) => {
     const startY = window.pageYOffset;
     const targetY = target.getBoundingClientRect().top + startY;
     const distanceY = targetY - startY;
     let startTime: number | null = null;
 
+    // Cubic ease-in-out function.
     const easeInOutCubic = (t: number): number =>
       t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
 
@@ -82,18 +105,29 @@ const Navbar: React.FC<NavbarProps> = ({
       const progress = Math.min(timeElapsed / duration, 1);
       const ease = easeInOutCubic(progress);
       window.scrollTo(0, startY + distanceY * ease);
-      if (timeElapsed < duration) requestAnimationFrame(animation);
+      if (timeElapsed < duration) {
+        requestAnimationFrame(animation);
+      }
     };
 
     requestAnimationFrame(animation);
   };
 
-  // Use IntersectionObserver to update activeSection as sections scroll into view.
+  // IntersectionObserver to update activeSection as the user scrolls.
   useEffect(() => {
-    const sectionIds = navItems.map((item) => item.href.substring(1));
+    // Only observe in-page sections if we're on the home page.
+    if (pathname !== "/") return;
+
+    // Extract the section ids from navItems.
+    const sectionIds = navItems
+      .filter((item) => item.href.startsWith("#") && item.section)
+      .map((item) => item.href.substring(1));
+
+    // Get the corresponding DOM elements.
     const sections = sectionIds
       .map((id) => document.getElementById(id))
       .filter((el): el is HTMLElement => el !== null);
+
     if (sections.length === 0) return;
 
     const observer = new IntersectionObserver(
@@ -106,41 +140,63 @@ const Navbar: React.FC<NavbarProps> = ({
       },
       { threshold: 0.6 }
     );
-    sections.forEach((section) => observer.observe(section));
-    return () => sections.forEach((section) => observer.unobserve(section));
-  }, [navItems]);
 
-  // Handle clicks on nav links.
+    sections.forEach((section) => observer.observe(section));
+
+    return () => {
+      sections.forEach((section) => observer.unobserve(section));
+    };
+  }, [pathname, navItems]);
+
+  // Handle navigation clicks: smooth-scroll for in-page anchors, update active state,
+  // and if not on home page, navigate to home with the hash.
   const handleNavClick =
     (item: NavItem) => (event: React.MouseEvent<HTMLAnchorElement>) => {
-      event.preventDefault();
-      const targetId = item.href.substring(1);
-      const targetElement = document.getElementById(targetId);
-      if (targetElement) {
-        smoothScrollTo(targetElement, 1500);
-        setActiveSection(item.section || "home");
+      if (item.href.startsWith("#")) {
+        event.preventDefault();
+        // If not on home page, navigate to home with the hash.
+        if (pathname !== "/") {
+          router.push("/" + item.href);
+        } else {
+          const targetId = item.href.substring(1);
+          const targetElement = document.getElementById(targetId);
+          if (targetElement) {
+            smoothScrollTo(targetElement, 1500);
+            setActiveSection(item.section || "home");
+          }
+        }
       }
+      // Close the mobile sheet shortly after a link is clicked.
       if (isSheetOpen) {
-        setTimeout(() => setIsSheetOpen(false), 2000);
+        setTimeout(() => {
+          setIsSheetOpen(false);
+        }, 2000);
       }
     };
 
-  // Choose the logo.
+  // Choose the appropriate logo component.
   const LogoComponent = logoVariant === "wlogo" ? WLogo : Logo;
 
-  // Base CSS classes.
+  // Base class for nav links.
   const linkBaseClass =
     "px-3 py-2 text-[18px] font-roboto font-medium transition-colors cursor-pointer";
+
+  // Text color for nav links.
   const textColorClass =
     textVariant === "black" ? "text-white lg:text-black" : "text-white";
 
-  // Header background.
+  // When active, the link color becomes blue.
+  const activeClass = "text-[#354569]";
+
+  // Header background:
+  // - If not scrolled, the header remains transparent.
+  // - Once scrolled, apply either a blue or a blurish white background.
   let headerBgClass = "bg-transparent";
   if (scrolled) {
     headerBgClass =
       headerVariant === "blue"
         ? "bg-[#354569]"
-        : "bg-[#354569] lg:bg-white/75 backdrop-blur-md";
+        : "bg-[#354569] lg:bg-white/90 backdrop-blur-md";
   }
 
   return (
@@ -148,44 +204,41 @@ const Navbar: React.FC<NavbarProps> = ({
       className={`fixed top-0 left-0 w-full z-50 ${headerBgClass} px-10 md:px-16 lg:px-28 py-3 transition-colors duration-300`}
     >
       <div className="container mx-auto flex items-center justify-between">
-        {/* Logo */}
+        {/* Logo (left side) */}
         <div className="flex-shrink-0">
           <Link href="/">
             <LogoComponent />
           </Link>
         </div>
 
-        {/* Desktop Navigation */}
+        {/* Desktop Navigation (visible on md and larger) */}
         <nav className="hidden md:block">
-          <ul className="flex space-x-6">
-            {navItems.map((item) => (
-              <li key={item.label}>
-                <Link
-                  href={item.href}
-                  onClick={handleNavClick(item)}
-                  className={`${linkBaseClass} ${textColorClass} flex flex-col group`}
-                >
-                  <span
-                    className={` ${isActive(item) ? "text-[#354569]" : ""}`}
-                  >
-                    {item.label}
-                  </span>
-                  <span
-                    className={`block h-0.5 bg-[#354569] transition-all duration-300 mt-1 ${
-                      isActive(item) ? "w-full" : "w-0"
-                    }`}
-                  ></span>
-                </Link>
-              </li>
-            ))}
-          </ul>
+          <NavigationMenu>
+            <NavigationMenuList className="flex space-x-6">
+              {navItems.map((item) => (
+                <NavigationMenuItem key={item.label}>
+                  <NavigationMenuLink asChild>
+                    <Link
+                      href={item.href}
+                      className={`${linkBaseClass} ${textColorClass} ${
+                        isActive(item) ? activeClass : ""
+                      }`}
+                      onClick={handleNavClick(item)}
+                    >
+                      {item.label}
+                    </Link>
+                  </NavigationMenuLink>
+                </NavigationMenuItem>
+              ))}
+            </NavigationMenuList>
+          </NavigationMenu>
         </nav>
 
-        {/* Mobile Navigation */}
+        {/* Mobile Navigation (hamburger menu for smaller screens) */}
         <div className="md:hidden">
           <Sheet open={isSheetOpen} onOpenChange={setIsSheetOpen}>
             <SheetTrigger asChild>
-              <button className={textColorClass + " p-2"}>
+              <button className={`p-2 ${textColorClass}`}>
                 <Menu className="h-6 w-6" />
               </button>
             </SheetTrigger>
@@ -195,15 +248,12 @@ const Navbar: React.FC<NavbarProps> = ({
                   <Link
                     key={item.label}
                     href={item.href}
+                    className={`${linkBaseClass} text-black uppercase ${
+                      isActive(item) ? activeClass : ""
+                    }`}
                     onClick={handleNavClick(item)}
-                    className={`${linkBaseClass} text-black uppercase group`}
                   >
-                    <span>{item.label}</span>
-                    <span
-                      className={`block h-0.5 bg-[#354569] transition-all duration-300 mt-1 ${
-                        isActive(item) ? "w-full" : "w-0 group-hover:w-full"
-                      }`}
-                    ></span>
+                    {item.label}
                   </Link>
                 ))}
               </div>
@@ -216,4 +266,4 @@ const Navbar: React.FC<NavbarProps> = ({
   );
 };
 
-export default Navbar;
+export default Navbar2;

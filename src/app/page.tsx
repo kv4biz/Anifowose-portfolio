@@ -50,6 +50,32 @@ export default function Home() {
             </p>
           </div>
         </section>
+        {/* pOrtfolio Section */}
+        <section
+          id="portfolio"
+          className="min-h-screen flex flex-col items-center justify-center bg-gray-400 px-4"
+        >
+          <div className="text-center">
+            <h1 className="text-4xl font-bold mb-4">My Portfolio</h1>
+            <p className="text-lg">
+              I’m Taofil Anifowose, a Chartered Accountant with a passion for
+              excellence.
+            </p>
+          </div>
+        </section>
+        {/* contact Section */}
+        <section
+          id="contact"
+          className="min-h-screen flex flex-col items-center justify-center bg-gray-600 px-4"
+        >
+          <div className="text-center">
+            <h1 className="text-4xl font-bold mb-4">My Contact</h1>
+            <p className="text-lg">
+              I’m Taofil Anifowose, a Chartered Accountant with a passion for
+              excellence.
+            </p>
+          </div>
+        </section>
       </div>
     </div>
   );
