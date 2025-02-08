@@ -70,10 +70,10 @@ body {
     @apply bg-background text-foreground;
   }
   .title {
-    @apply font-inriaSerif text-2xl lg:text-4xl font-bold text-[#C3910A];
+    @apply font-inriaSerif text-2xl lg:text-4xl font-bold text-[#C3910A] italic;
   }
   .title2 {
-    @apply font-inriaSerif  font-bold text-[#C3910A];
+    @apply font-inriaSerif  font-bold text-[#C3910A] italic;
   }
   .title3 {
     @apply font-inriaSerif text-2xl lg:text-3xl font-bold;

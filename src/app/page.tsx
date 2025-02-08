@@ -1,7 +1,10 @@
 import About from "@/components/About";
+import Contact from "@/components/Contact";
 import Education from "@/components/Education";
 import Experience from "@/components/Experience";
+import Feedback from "@/components/Feedback";
 import Hero from "@/components/Hero";
+import Map from "@/components/Map";
 import Navbar from "@/components/Navbar";
 import Skills from "@/components/Skills";
 import Trainings from "@/components/Training";
@@ -43,28 +46,17 @@ export default function Home() {
         {/* pOrtfolio Section */}
         <section
           id="portfolio"
-          className="min-h-screen flex flex-col items-center justify-center bg-gray-400 px-4"
+          className="flex flex-col w-full items-center justify-center"
         >
-          <div className="text-center">
-            <h1 className="text-4xl font-bold mb-4">My Portfolio</h1>
-            <p className="text-lg">
-              I’m Taofil Anifowose, a Chartered Accountant with a passion for
-              excellence.
-            </p>
-          </div>
+          <Feedback />
         </section>
         {/* contact Section */}
         <section
           id="contact"
-          className="min-h-screen flex flex-col items-center justify-center bg-gray-600 px-4"
+          className="flex flex-col w-full items-center justify-center"
         >
-          <div className="text-center">
-            <h1 className="text-4xl font-bold mb-4">My Contact</h1>
-            <p className="text-lg">
-              I’m Taofil Anifowose, a Chartered Accountant with a passion for
-              excellence.
-            </p>
-          </div>
+          <Contact />
+          <Map />
         </section>
       </div>
     </div>
