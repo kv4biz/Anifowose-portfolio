@@ -4,6 +4,7 @@ import React from "react";
 import { TypingAnimation } from "@/components/magicui/typing-animation";
 import { Ripple } from "@/components/magicui/ripple";
 import { Facebook, Linkedin, Instagram, Twitter, Youtube } from "lucide-react";
+import Image from "next/image";
 
 const socialLinks = [
   {
@@ -71,7 +72,9 @@ const Hero = () => {
             numCircles={3}
             className="-top-20 -right-24"
           />
-          <img
+          <Image
+            width={800}
+            height={800}
             src="/heroimg.png"
             alt="Hero"
             className="relative -right-24 -bottom-20 z-20 w-full max-w-lg"
@@ -82,7 +85,9 @@ const Hero = () => {
       {/* Mobile Layout */}
       <section className="lg:hidden relative flex items-end justify-center min-h-screen py-10 w-full">
         {/* Mirrored Background Image */}
-        <img
+        <Image
+          width={800}
+          height={800}
           src="/heroimg.png"
           alt="Hero"
           className="absolute inset-0 w-full h-full object-cover transform scale-x-[-1]"

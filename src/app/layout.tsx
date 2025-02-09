@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Roboto, Inria_Serif } from "next/font/google";
 import "./globals.css";
 import Footer from "@/components/Footer";
+import { Toaster } from "@/components/ui/toaster";
 
 const roboto = Roboto({
   weight: ["100", "300", "400", "500", "700", "900"],
@@ -33,6 +34,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${roboto.variable} ${inriaSerif.variable} antialiased`}>
         {children}
+        <Toaster />
         <Footer />
       </body>
     </html>

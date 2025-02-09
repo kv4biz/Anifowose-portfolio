@@ -1,31 +1,15 @@
+// components/Contact.tsx
 "use client";
-
 import React from "react";
 import { Button } from "@/components/ui/button";
 import { Mail, MapPin, Phone } from "lucide-react";
-import { useForm } from "react-hook-form";
-import {
-  Form,
-  FormField,
-  FormItem,
-  FormLabel,
-  FormControl,
-  FormMessage,
-} from "@/components/ui/form";
+import { ContactForm } from "./ContactForm";
 
-const Contact = () => {
-  const methods = useForm();
-
-  const onSubmit = (data: any) => {
-    console.log(data);
-    // Implement form submission logic here.
-  };
-
+const Contact: React.FC = () => {
   return (
     <div className="container mx-auto px-4 lg:px-10 py-20">
-      {/* Row 1: Headline & Calendly Button */}
+      {/* Row 1: Headline & Consultation Button */}
       <div className="flex flex-col lg:flex-row items-center justify-between mb-16">
-        {/* Left side: Title and tagline */}
         <div className="max-w-xl font-roboto">
           <h2 className="text-2xl lg:text-3xl font-bold text-gray-500">
             Let's Elevate Your Financial Strategy
@@ -34,11 +18,10 @@ const Contact = () => {
             Schedule a consultation to discuss your financial goals today.
           </p>
         </div>
-        {/* Right side: Calendly button */}
         <div className="mt-6 lg:mt-0">
           <Button
             variant="outline"
-            className="hover:bg-gray-700 bg-white  hover:text-white text-gray-700"
+            className="hover:bg-gray-700 bg-white hover:text-white text-gray-700"
           >
             Schedule
           </Button>
@@ -100,76 +83,8 @@ const Contact = () => {
         </div>
 
         {/* Right Column: Contact Form */}
-        <div className="lg:w-1/2 mx-5 border rounded-md shadow-lg p-5 lg:px-8">
-          <h3 className="text-2xl font-bold mb-4 text-[#133679]">
-            Send a Message
-          </h3>
-          <Form {...methods}>
-            <form
-              onSubmit={methods.handleSubmit(onSubmit)}
-              className="space-y-4"
-            >
-              <FormField
-                control={methods.control}
-                name="name"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormControl>
-                      <input
-                        className="w-full border border-gray-300 rounded-md placeholder:font-light px-3 py-2 text-sm"
-                        placeholder="Name"
-                        {...field}
-                      />
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
-
-              <FormField
-                control={methods.control}
-                name="email"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormControl>
-                      <input
-                        type="email"
-                        className="w-full border border-gray-300 rounded-md px-3 py-2 placeholder:font-light text-sm"
-                        placeholder="Email"
-                        {...field}
-                      />
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
-
-              <FormField
-                control={methods.control}
-                name="message"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormControl>
-                      <textarea
-                        className="w-full border border-gray-300 rounded-md px-3 py-2 placeholder:font-light text-sm"
-                        placeholder="Message"
-                        rows={4}
-                        {...field}
-                      />
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
-
-              <Button
-                type="submit"
-                className="w-full bg-[#133679] rounded-sm hover:bg-white hover:text-[#133679] hover:border hover:border-[#133679]"
-              >
-                Send
-              </Button>
-            </form>
-          </Form>
+        <div className="lg:w-1/2 mx-5">
+          <ContactForm />
         </div>
       </div>
     </div>
