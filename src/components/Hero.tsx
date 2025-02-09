@@ -2,17 +2,30 @@
 
 import React from "react";
 import { TypingAnimation } from "@/components/magicui/typing-animation";
-import { Button } from "@/components/ui/button";
 import { Ripple } from "@/components/magicui/ripple";
+import { Facebook, Linkedin, Instagram, Twitter, Youtube } from "lucide-react";
+
+const socialLinks = [
+  {
+    name: "Facebook",
+    icon: <Facebook size={20} />,
+    url: "https://facebook.com",
+  },
+  {
+    name: "Linkedin",
+    icon: <Linkedin size={20} />,
+    url: "https://linkedin.com",
+  },
+  {
+    name: "Instagram",
+    icon: <Instagram size={20} />,
+    url: "https://instagram.com",
+  },
+  { name: "Twitter", icon: <Twitter size={20} />, url: "https://twitter.com" },
+  { name: "Youtube", icon: <Youtube size={20} />, url: "https://youtube.com" },
+];
 
 const Hero = () => {
-  const scrollToContact = () => {
-    const contactSection = document.getElementById("contact");
-    if (contactSection) {
-      contactSection.scrollIntoView({ behavior: "smooth" });
-    }
-  };
-
   return (
     <div className="flex w-full">
       {/* Desktop Layout */}
@@ -20,7 +33,7 @@ const Hero = () => {
         className="hidden lg:flex items-center justify-between overflow-hidden pt-20 bg-cover w-full"
         style={{ backgroundImage: "url('/herobackground.png')" }}
       >
-        {/* Left Column: Texts and Button */}
+        {/* Left Column: Texts and Social Icons */}
         <div className="z-10 flex flex-col max-w-2xl pl-28 font-roboto">
           <p className="text-xl font-semibold">Hello Mate</p>
           <h1 className="text-2xl tracking-tight">I’m Taofik Anifowose</h1>
@@ -34,12 +47,20 @@ const Hero = () => {
               vel, aliquet nec, vulputate eget, arcu.
             </p>
           </div>
-          <Button
-            className="mt-6 w-40 bg-[#133679] rounded-sm hover:bg-white hover:text-[#133679] hover:border hover:border-[#133679]"
-            onClick={scrollToContact}
-          >
-            Contact
-          </Button>
+          <div className="flex space-x-4 mt-6">
+            {socialLinks.map((social, index) => (
+              <a
+                key={index}
+                href={social.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 flex items-center justify-center rounded-full bg-[#133679] text-white hover:bg-white hover:text-[#133679] hover:border hover:border-[#133679] transition-colors"
+                aria-label={social.name}
+              >
+                {social.icon}
+              </a>
+            ))}
+          </div>
         </div>
 
         {/* Right Column: Ripple Effect with Hero Image */}
@@ -48,7 +69,7 @@ const Hero = () => {
             mainCircleSize={350}
             mainCircleOpacity={0.2}
             numCircles={3}
-            className="-top-20 -left-8"
+            className="-top-20 -right-24"
           />
           <img
             src="/heroimg.png"
@@ -72,7 +93,7 @@ const Hero = () => {
         <div className="relative z-10 text-center px-4">
           <div className="flex w-full items-center justify-center mb-10">
             <hr className="border-t w-16 border-white" />
-            <p className="px-4 title2 text-4xl">Hello Mate</p>
+            <p className="px-4 title2 text-4xl text-white">Hello Mate</p>
           </div>
           <div className="flex-col font-roboto flex gap-2">
             <h1 className="text-2xl tracking-tight text-white">
@@ -89,12 +110,20 @@ const Hero = () => {
               </p>
             </div>
           </div>
-          <Button
-            className="mt-6 w-40 hover:bg-[#133679] font-semibold rounded-sm bg-white text-[#133679] hover:text-white mx-auto"
-            onClick={scrollToContact}
-          >
-            Contact
-          </Button>
+          <div className="flex space-x-4 mt-6 justify-center">
+            {socialLinks.map((social, index) => (
+              <a
+                key={index}
+                href={social.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 flex items-center justify-center rounded-full bg-white text-[#133679] hover:bg-[#133679] hover:text-white hover:border hover:border-[#133679] transition-colors"
+                aria-label={social.name}
+              >
+                {social.icon}
+              </a>
+            ))}
+          </div>
         </div>
       </section>
     </div>

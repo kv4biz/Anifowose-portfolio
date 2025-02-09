@@ -49,7 +49,7 @@ const About = () => {
           </div>
         </div>
         {/* Right Column: Image */}
-        <div className="flex flex-col gap-10 lg:w-1/3 max-w-xl">
+        <div className="flex flex-col gap-10 lg:w-1/3 lg:max-w-xl">
           <div className="relative left-3 lg:left-0 border-t-2 border-r-2 border-[#C3910A] rounded-tr-lg">
             <Image
               src="/aboutimg.png"

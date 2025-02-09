@@ -6,6 +6,7 @@ import Feedback from "@/components/Feedback";
 import Hero from "@/components/Hero";
 import Map from "@/components/Map";
 import Navbar from "@/components/Navbar";
+import Portfolio from "@/components/Portfolio";
 import Skills from "@/components/Skills";
 import Trainings from "@/components/Training";
 export default function Home() {
@@ -48,6 +49,7 @@ export default function Home() {
           id="portfolio"
           className="flex flex-col w-full items-center justify-center"
         >
+          <Portfolio />
           <Feedback />
         </section>
         {/* contact Section */}
