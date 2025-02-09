@@ -2,6 +2,8 @@
 
 import React from "react";
 import { Star, User } from "lucide-react";
+import { motion } from "framer-motion";
+import { titleVariants, tagVariants, desVariants } from "@/utils/animation";
 
 const feedbackData = [
   {
@@ -26,15 +28,36 @@ const Feedback = () => {
     <section className="flex w-full py-10 lg:pt-20 px-4 lg:px-10 bg-[#f6f7f8]">
       <div className="container mx-auto">
         {/* Section Title */}
-        <h2 className="title text-center mb-2">Clients feedback</h2>
-        <p className="text-center font-roboto text-gray-600 mb-8">
+        <motion.h2
+          className="title text-center mb-2"
+          variants={titleVariants("down")}
+          initial="offscreen"
+          whileInView="onscreen"
+          viewport={{ once: true }}
+          transition={{ delay: 0.1 }}
+        >
+          Clients feedback
+        </motion.h2>
+        <motion.p
+          className="text-center font-roboto text-gray-600 mb-8"
+          variants={desVariants("down")}
+          initial="offscreen"
+          whileInView="onscreen"
+          viewport={{ once: true }}
+          transition={{ delay: 0.2 }}
+        >
           Our clients rave about our personalized service and expertise.
-        </p>
+        </motion.p>
         {/* Feedback Cards Grid */}
         <div className="font-roboto grid grid-cols-1 md:grid-cols-3 gap-4 lg:gap-10">
           {feedbackData.map((feedback, index) => (
-            <div
+            <motion.div
               key={index}
+              variants={tagVariants("up")}
+              initial="offscreen"
+              whileInView="onscreen"
+              viewport={{ once: true }}
+              transition={{ delay: 0.3 + index * 1 }}
               className="flex flex-col p-6 border-2 border-gray-600 bg-transparent"
             >
               {/* Stars */}
@@ -64,7 +87,7 @@ const Feedback = () => {
                   <p className="text-gray-700 text-sm">{feedback.job}</p>
                 </div>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>

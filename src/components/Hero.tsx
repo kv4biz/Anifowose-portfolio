@@ -1,10 +1,17 @@
 "use client";
 
 import React from "react";
+import { motion } from "framer-motion";
 import { TypingAnimation } from "@/components/magicui/typing-animation";
 import { Ripple } from "@/components/magicui/ripple";
 import { Facebook, Linkedin, Instagram, Twitter, Youtube } from "lucide-react";
 import Image from "next/image";
+import {
+  tagVariants,
+  titleVariants,
+  desVariants,
+  imgVariant,
+} from "@/utils/animation";
 
 const socialLinks = [
   {
@@ -36,18 +43,40 @@ const Hero = () => {
       >
         {/* Left Column: Texts and Social Icons */}
         <div className="z-10 flex flex-col max-w-2xl pl-28 font-roboto">
-          <p className="text-xl font-semibold">Hello Mate</p>
-          <h1 className="text-2xl tracking-tight">I’m Taofik Anifowose</h1>
+          <motion.p
+            className="text-xl font-semibold"
+            variants={tagVariants("up")}
+            initial="offscreen"
+            whileInView="onscreen"
+            viewport={{ once: true }}
+          >
+            Hello Mate
+          </motion.p>
+          <motion.h1
+            className="text-2xl tracking-tight"
+            variants={titleVariants("up")}
+            initial="offscreen"
+            whileInView="onscreen"
+            viewport={{ once: true }}
+          >
+            I’m Taofik Anifowose
+          </motion.h1>
           <h2 className="text-5xl font-medium italic text-[#133679]">
             <TypingAnimation>A Chartered Accountant</TypingAnimation>
           </h2>
-          <div className="flex max-w-lg">
+          <motion.div
+            className="flex max-w-lg"
+            variants={desVariants("up")}
+            initial="offscreen"
+            whileInView="onscreen"
+            viewport={{ once: true }}
+          >
             <p className="text-sm text-gray-600">
               Donec quam felis, ultricies nec, pellentesque eu, pretium quis,
               sem. Nulla consequat massa quis enim. Donec pede justo, fringilla
               vel, aliquet nec, vulputate eget, arcu.
             </p>
-          </div>
+          </motion.div>
           <div className="flex space-x-4 mt-6">
             {socialLinks.map((social, index) => (
               <a
@@ -72,13 +101,21 @@ const Hero = () => {
             numCircles={3}
             className="-top-20 -right-24"
           />
-          <Image
-            width={800}
-            height={800}
-            src="/heroimg.png"
-            alt="Hero"
+          <motion.div
+            variants={imgVariant("down")}
+            initial="offscreen"
+            whileInView="onscreen"
+            viewport={{ once: true }}
             className="relative -right-24 -bottom-20 z-20 w-full max-w-lg"
-          />
+          >
+            <Image
+              width={800}
+              height={800}
+              src="/heroimg.png"
+              alt="Hero"
+              className="w-full"
+            />
+          </motion.div>
         </div>
       </section>
 
@@ -96,25 +133,41 @@ const Hero = () => {
         <div className="absolute inset-0 bg-black opacity-40" />
         {/* Centered Text Content */}
         <div className="relative z-10 text-center px-4">
-          <div className="flex w-full items-center justify-center mb-10">
+          <motion.div
+            className="flex w-full items-center justify-center mb-10"
+            variants={tagVariants("up")}
+            initial="offscreen"
+            whileInView="onscreen"
+            viewport={{ once: true }}
+          >
             <hr className="border-t w-16 border-white" />
             <p className="px-4 title2 text-4xl text-white">Hello Mate</p>
-          </div>
-          <div className="flex-col font-roboto flex gap-2">
-            <h1 className="text-2xl tracking-tight text-white">
-              I’m Taofik Anifowose
-            </h1>
-            <h2 className="text-4xl font-medium italic text-white">
-              <TypingAnimation>A Chartered Accountant</TypingAnimation>
-            </h2>
-            <div className="flex max-w-lg mx-auto">
-              <p className="text-sm text-white">
-                Donec quam felis, ultricies nec, pellentesque eu, pretium quis,
-                sem. Nulla consequat massa quis enim. Donec pede justo,
-                fringilla vel, aliquet nec, vulputate eget, arcu.
-              </p>
-            </div>
-          </div>
+          </motion.div>
+          <motion.h1
+            className="text-2xl tracking-tight text-white"
+            variants={titleVariants("up")}
+            initial="offscreen"
+            whileInView="onscreen"
+            viewport={{ once: true }}
+          >
+            I’m Taofik Anifowose
+          </motion.h1>
+          <h2 className="text-4xl font-medium italic text-white">
+            <TypingAnimation>A Chartered Accountant</TypingAnimation>
+          </h2>
+          <motion.div
+            className="flex max-w-lg mx-auto"
+            variants={desVariants("up")}
+            initial="offscreen"
+            whileInView="onscreen"
+            viewport={{ once: true }}
+          >
+            <p className="text-sm text-white">
+              Donec quam felis, ultricies nec, pellentesque eu, pretium quis,
+              sem. Nulla consequat massa quis enim. Donec pede justo, fringilla
+              vel, aliquet nec, vulputate eget, arcu.
+            </p>
+          </motion.div>
           <div className="flex space-x-4 mt-6 justify-center">
             {socialLinks.map((social, index) => (
               <a

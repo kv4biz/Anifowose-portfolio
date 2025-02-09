@@ -2,6 +2,8 @@
 
 import React from "react";
 import { Timeline, TimelineEvent } from "./Timeline";
+import { motion } from "framer-motion";
+import { titleVariants } from "@/utils/animation";
 
 const timelineData: TimelineEvent[] = [
   { title: "Financial Officer", period: "2008 - 2009" },
@@ -22,14 +24,24 @@ const timelineData: TimelineEvent[] = [
     period: "2022 - present",
   },
 ];
+
 const Experience = () => {
   return (
     <div className="flex w-full py-20">
       <div className="flex flex-col container mx-auto items-center justify-center gap-5 lg:gap-10">
-        <div className="">
-          <h3 className="title">Professional Experience</h3>
+        <div>
+          <motion.h3
+            className="title"
+            variants={titleVariants("down")}
+            initial="offscreen"
+            whileInView="onscreen"
+            viewport={{ once: true }}
+            transition={{ delay: 0.1 }}
+          >
+            Professional Experience
+          </motion.h3>
         </div>
-        <div className="">
+        <div>
           <Timeline events={timelineData} />
         </div>
       </div>

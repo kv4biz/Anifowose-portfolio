@@ -1,7 +1,7 @@
 "use client";
-
 import { motion, useScroll, useTransform } from "framer-motion";
 import React, { useEffect, useRef, useState } from "react";
+import { tagVariants } from "@/utils/animation";
 
 // Define the timeline event type.
 export interface TimelineEvent {
@@ -63,30 +63,45 @@ export const Timeline: React.FC<TimelineProps> = ({ events }) => {
 
               {/* Desktop layout: alternate sides */}
               <div className="hidden md:block">
-                {isLeft ? (
-                  <div className="w-1/2 pr-8 text-right">
-                    <h3 className="text-xl font-bold text-gray-800">
-                      {event.title}
-                    </h3>
-                    <p className="text-sm text-gray-600">{event.period}</p>
-                  </div>
-                ) : (
-                  <div className="w-1/2 pl-8 text-left ml-auto">
-                    <h3 className="text-xl font-bold text-gray-800">
-                      {event.title}
-                    </h3>
-                    <p className="text-sm text-gray-600">{event.period}</p>
-                  </div>
-                )}
+                <motion.div
+                  variants={tagVariants("up")}
+                  initial="offscreen"
+                  whileInView="onscreen"
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 1 }}
+                >
+                  {isLeft ? (
+                    <div className="w-1/2 pr-8 text-right">
+                      <h3 className="text-xl font-bold text-gray-800">
+                        {event.title}
+                      </h3>
+                      <p className="text-sm text-gray-600">{event.period}</p>
+                    </div>
+                  ) : (
+                    <div className="w-1/2 pl-8 text-left ml-auto">
+                      <h3 className="text-xl font-bold text-gray-800">
+                        {event.title}
+                      </h3>
+                      <p className="text-sm text-gray-600">{event.period}</p>
+                    </div>
+                  )}
+                </motion.div>
               </div>
 
               {/* Mobile layout: event content aligned to the right */}
-              <div className="flex flex-col md:hidden max-w-sm ml-12 mb-16 text-right">
+              <motion.div
+                className="flex flex-col md:hidden max-w-sm ml-12 mb-16 text-right"
+                variants={tagVariants("up")}
+                initial="offscreen"
+                whileInView="onscreen"
+                viewport={{ once: true }}
+                transition={{ delay: index * 1 }}
+              >
                 <h3 className="text-lg font-bold text-gray-800">
                   {event.title}
                 </h3>
                 <p className="text-sm text-gray-600">{event.period}</p>
-              </div>
+              </motion.div>
             </div>
           );
         })}

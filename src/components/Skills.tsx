@@ -1,6 +1,8 @@
 "use client";
 
 import React from "react";
+import { motion } from "framer-motion";
+import { tagVariants, titleVariants, desVariants } from "@/utils/animation";
 
 const skills = [
   "Compliance Management",
@@ -23,25 +25,47 @@ const skills = [
 
 const Skills = () => {
   return (
-    <section className="flex py-10 lg:py-10 px-4 ">
+    <section className="flex py-10 lg:py-10 px-4">
       <div className="flex flex-col gap-8 container mx-auto items-center">
         <div className="flex flex-col gap-4 max-w-2xl items-center justify-center text-center">
-          <h2 className="title">My Skills</h2>
-          <p className="text-center text-gray-600 mb-8">
+          <motion.h2
+            className="title"
+            variants={titleVariants("down")}
+            initial="offscreen"
+            whileInView="onscreen"
+            viewport={{ once: true }}
+          >
+            My Skills
+          </motion.h2>
+          <motion.p
+            className="text-center text-gray-600 mb-8"
+            variants={desVariants("down")}
+            initial="offscreen"
+            whileInView="onscreen"
+            viewport={{ once: true }}
+          >
             As a Chartered Accountant, I leverage my financial expertise to
             ensure compliance, budgeting, planning, and risk management for
             success.
-          </p>
+          </motion.p>
         </div>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 lg:gap-10 font-roboto">
           {skills.map((skill, index) => (
-            <div
+            <motion.div
               key={index}
-              className="p-4 lg:px-8 bg-white border border-gray-300/40 rounded-md"
-              style={{ boxShadow: "-4px 4px 8px rgba(0, 0, 0, 0.1)" }}
+              variants={tagVariants("up")}
+              initial="offscreen"
+              whileInView="onscreen"
+              viewport={{ once: true }}
+              transition={{ delay: index * 1 }}
             >
-              <p className="text-sm lg:text-lg font-normal">{skill}</p>
-            </div>
+              <div
+                className="flex items-center justify-center p-4 lg:px-8 bg-white border border-gray-300/40 rounded-md"
+                style={{ boxShadow: "-4px 4px 8px rgba(0, 0, 0, 0.1)" }}
+              >
+                <p className="text-sm lg:text-[13px] font-normal">{skill}</p>
+              </div>
+            </motion.div>
           ))}
         </div>
       </div>

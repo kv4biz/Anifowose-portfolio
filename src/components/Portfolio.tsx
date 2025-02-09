@@ -1,5 +1,8 @@
 "use client";
+
 import React from "react";
+import { motion } from "framer-motion";
+import { titleVariants, tagVariants, desVariants } from "@/utils/animation";
 
 interface DocumentItem {
   id: number;
@@ -36,17 +39,38 @@ const Portfolio: React.FC = () => {
       <div className="flex w-full flex-col items-center justify-center container mx-auto">
         {/* Title and description */}
         <div className="text-center mb-10">
-          <h1 className="title text-3xl font-bold mb-2">My Portfolio</h1>
-          <p className="text-gray-700 text-sm">
+          <motion.h1
+            className="title text-3xl font-bold mb-2"
+            variants={titleVariants("down")}
+            initial="offscreen"
+            whileInView="onscreen"
+            viewport={{ once: true }}
+            transition={{ delay: 0.1 }}
+          >
+            My Portfolio
+          </motion.h1>
+          <motion.p
+            className="text-gray-700 text-sm"
+            variants={desVariants("down")}
+            initial="offscreen"
+            whileInView="onscreen"
+            viewport={{ once: true }}
+            transition={{ delay: 0.2 }}
+          >
             Click on the preview button to view the portfolio project document.
-          </p>
+          </motion.p>
         </div>
 
         {/* Document list */}
         <ul className="flex flex-col items-center justify-center w-full max-w-2xl space-y-4">
-          {documents.map((doc) => (
-            <li
+          {documents.map((doc, index) => (
+            <motion.li
               key={doc.id}
+              variants={tagVariants("up")}
+              initial="offscreen"
+              whileInView="onscreen"
+              viewport={{ once: true }}
+              transition={{ delay: 0.3 + index * 1 }}
               className="flex w-full justify-between items-center border p-4 rounded shadow-sm"
             >
               <span className="text-lg">{doc.name}</span>
@@ -56,7 +80,7 @@ const Portfolio: React.FC = () => {
               >
                 Preview
               </button>
-            </li>
+            </motion.li>
           ))}
         </ul>
       </div>
