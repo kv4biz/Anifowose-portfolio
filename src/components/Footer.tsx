@@ -71,7 +71,7 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="bg-[#133679] font-roboto text-white">
+    <footer className="bg-[#000080] font-roboto text-white">
       <div className="container mx-auto px-4 pt-10 lg:pt-16 space-y-12">
         {/* Row 1: Subscribe Section */}
         <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">

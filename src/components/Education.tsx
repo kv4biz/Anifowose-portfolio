@@ -32,7 +32,7 @@ const Education = () => {
   return (
     <section
       id="education"
-      className="flex w-full py-20 lg:px-20 bg-[#D6D9DE]/20"
+      className="flex w-full py-20 px-5 lg:px-20 bg-[#D6D9DE]/25 overflow-hidden"
     >
       <div className="container mx-auto flex px-2 items-start justify-between">
         {/* Left Side: Text and Cards */}

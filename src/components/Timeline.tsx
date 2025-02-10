@@ -39,7 +39,7 @@ export const Timeline: React.FC<TimelineProps> = ({ events }) => {
   return (
     <div
       ref={containerRef}
-      className="relative flex w-full py-10 ml-4 lg:ml-0 overflow-hidden font-roboto"
+      className="relative flex w-full py-10 mx-auto overflow-hidden font-roboto"
     >
       {/* Vertical timeline line */}
       <div className="absolute top-0 h-full w-[2px] bg-gray-300 left-0 md:left-1/2 md:transform md:-translate-x-1/2">
@@ -90,7 +90,7 @@ export const Timeline: React.FC<TimelineProps> = ({ events }) => {
 
               {/* Mobile layout: event content aligned to the right */}
               <motion.div
-                className="flex flex-col md:hidden max-w-sm ml-12 mb-16 text-right"
+                className="flex flex-col md:hidden max-w-md -mt-12 text-right"
                 variants={tagVariants("up")}
                 initial="offscreen"
                 whileInView="onscreen"

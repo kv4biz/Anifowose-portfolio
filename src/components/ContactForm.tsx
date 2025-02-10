@@ -51,7 +51,7 @@ export const ContactForm: React.FC = () => {
 
   return (
     <div className="border rounded-md shadow-lg p-5 lg:px-8 font-roboto">
-      <h3 className="text-2xl font-bold mb-4 text-[#133679]">Send a Message</h3>
+      <h3 className="text-2xl font-bold mb-4 text-[#000080]">Send a Message</h3>
       <Form {...methods}>
         <form onSubmit={methods.handleSubmit(onSubmit)} className="space-y-4">
           <FormField
@@ -106,7 +106,7 @@ export const ContactForm: React.FC = () => {
           />
           <Button
             type="submit"
-            className="w-full bg-[#133679] rounded-sm hover:bg-white hover:text-[#133679] hover:border hover:border-[#133679]"
+            className="w-full bg-[#000080] rounded-sm hover:bg-white hover:text-[#000080] hover:border hover:border-[#000080]"
             disabled={loading}
           >
             {loading ? "Sending..." : "Send"}

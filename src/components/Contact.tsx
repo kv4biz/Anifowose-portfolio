@@ -122,7 +122,7 @@ const Contact: React.FC = () => {
                   </div>
                 </div>
                 <div>
-                  <p className="text-lg font-medium text-[#133679]">
+                  <p className="text-lg font-medium text-[#000080]">
                     {detail.title}
                   </p>
                   <p className="font-light text-sm text-gray-600">

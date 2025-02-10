@@ -4,7 +4,6 @@ import React from "react";
 import { motion } from "framer-motion";
 import { TypingAnimation } from "@/components/magicui/typing-animation";
 import { Ripple } from "@/components/magicui/ripple";
-import { Facebook, Linkedin, Instagram, Twitter, Youtube } from "lucide-react";
 import Image from "next/image";
 import {
   tagVariants,
@@ -12,27 +11,41 @@ import {
   desVariants,
   imgVariant,
 } from "@/utils/animation";
+import {
+  FaFacebookF,
+  FaLinkedinIn,
+  FaInstagram,
+  FaTwitter,
+  FaYoutube,
+} from "react-icons/fa";
 
 const socialLinks = [
   {
     name: "Facebook",
-    icon: <Facebook size={20} />,
+    icon: <FaFacebookF size={20} />,
     url: "https://facebook.com",
   },
   {
     name: "Linkedin",
-    icon: <Linkedin size={20} />,
+    icon: <FaLinkedinIn size={20} />,
     url: "https://linkedin.com",
   },
   {
     name: "Instagram",
-    icon: <Instagram size={20} />,
+    icon: <FaInstagram size={20} />,
     url: "https://instagram.com",
   },
-  { name: "Twitter", icon: <Twitter size={20} />, url: "https://twitter.com" },
-  { name: "Youtube", icon: <Youtube size={20} />, url: "https://youtube.com" },
+  {
+    name: "Twitter",
+    icon: <FaTwitter size={20} />,
+    url: "https://twitter.com",
+  },
+  {
+    name: "Youtube",
+    icon: <FaYoutube size={20} />,
+    url: "https://youtube.com",
+  },
 ];
-
 const Hero = () => {
   return (
     <div className="flex w-full">
@@ -61,7 +74,7 @@ const Hero = () => {
           >
             I’m Taofik Anifowose
           </motion.h1>
-          <h2 className="text-5xl font-medium italic text-[#133679]">
+          <h2 className="text-5xl font-medium italic text-[#000080]">
             <TypingAnimation>A Chartered Accountant</TypingAnimation>
           </h2>
           <motion.div
@@ -84,7 +97,7 @@ const Hero = () => {
                 href={social.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 flex items-center justify-center rounded-full bg-[#133679] text-white hover:bg-white hover:text-[#133679] hover:border hover:border-[#133679] transition-colors"
+                className="w-10 h-10 flex items-center justify-center rounded-full bg-[#000080] text-white hover:bg-white hover:text-[#000080] hover:border hover:border-[#000080] transition-colors"
                 aria-label={social.name}
               >
                 {social.icon}
@@ -175,7 +188,7 @@ const Hero = () => {
                 href={social.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 flex items-center justify-center rounded-full bg-white text-[#133679] hover:bg-[#133679] hover:text-white hover:border hover:border-[#133679] transition-colors"
+                className="w-10 h-10 flex items-center justify-center rounded-full bg-white text-[#000080] hover:bg-[#000080] hover:text-white hover:border hover:border-[#000080] transition-colors"
                 aria-label={social.name}
               >
                 {social.icon}

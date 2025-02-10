@@ -139,8 +139,8 @@ const Navbar: React.FC<NavbarProps> = ({
   if (scrolled) {
     headerBgClass =
       headerVariant === "blue"
-        ? "bg-[#133679]"
-        : "bg-[#133679] lg:bg-white/85 backdrop-blur-md";
+        ? "bg-[#000080]"
+        : "bg-[#000080] lg:bg-white/85 backdrop-blur-md";
   }
 
   return (
@@ -166,12 +166,12 @@ const Navbar: React.FC<NavbarProps> = ({
                   className={`${linkBaseClass} ${textColorClass} flex flex-col group`}
                 >
                   <span
-                    className={` ${isActive(item) ? "lg:text-[#133679]" : ""}`}
+                    className={` ${isActive(item) ? "lg:text-[#000080]" : ""}`}
                   >
                     {item.label}
                   </span>
                   <span
-                    className={`block h-0.5 bg-white lg:bg-[#133679] transition-all duration-300 mt-1 ${
+                    className={`block h-0.5 bg-white lg:bg-[#000080] transition-all duration-300 mt-1 ${
                       isActive(item) ? "w-full" : "w-0"
                     }`}
                   ></span>
@@ -200,7 +200,7 @@ const Navbar: React.FC<NavbarProps> = ({
                   >
                     <span>{item.label}</span>
                     <span
-                      className={`block h-0.5 bg-[#133679] transition-all duration-300 mt-1 ${
+                      className={`block h-0.5 bg-[#000080] transition-all duration-300 mt-1 ${
                         isActive(item) ? "w-full" : "w-0 group-hover:w-full"
                       }`}
                     ></span>

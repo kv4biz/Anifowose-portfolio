@@ -27,7 +27,7 @@ const timelineData: TimelineEvent[] = [
 
 const Experience = () => {
   return (
-    <div className="flex w-full py-20">
+    <div className="flex w-full py-20 overflow-hidden px-4 lg:px-10">
       <div className="flex flex-col container mx-auto items-center justify-center gap-5 lg:gap-10">
         <div>
           <motion.h3

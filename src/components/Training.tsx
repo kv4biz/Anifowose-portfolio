@@ -47,7 +47,7 @@ const Trainings = () => {
               className="flex items-start space-x-2 mx-4 lg:mx-0"
             >
               {/* Bullet as a list dot */}
-              <span className="text-3xl text-[#133679]">&#8226;</span>
+              <span className="text-3xl text-[#000080]">&#8226;</span>
               <p className="text-gray-600 font-light mt-2 italic">{training}</p>
             </motion.div>
           ))}

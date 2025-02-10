@@ -11,7 +11,7 @@ import {
 
 const About = () => {
   return (
-    <section id="about" className="py-16 lg:pt-24 bg-white">
+    <section id="about" className="py-16 lg:pt-24 bg-white overflow-hidden">
       <div className="container mx-auto flex flex-col lg:flex-row-reverse gap-8 lg:gap-20 items-start justify-center px-8 lg:px-10">
         {/* Left Column: Text Content */}
         <div className="flex flex-col gap-3 lg:gap-5 lg:w-2/3">

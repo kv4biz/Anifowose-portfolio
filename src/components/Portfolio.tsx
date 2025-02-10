@@ -76,7 +76,7 @@ const Portfolio: React.FC = () => {
               <span className="text-lg">{doc.name}</span>
               <button
                 onClick={() => openPreview(doc)}
-                className="bg-white text-[#133679] hover:bg-[#133679] hover:text-white transition-colors py-1 px-3 rounded border border-[#133679]"
+                className="bg-white text-[#000080] hover:bg-[#000080] hover:text-white transition-colors py-1 px-3 rounded border border-[#000080]"
               >
                 Preview
               </button>
