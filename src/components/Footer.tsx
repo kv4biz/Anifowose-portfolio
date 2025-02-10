@@ -113,7 +113,7 @@ const Footer = () => {
         </div>
 
         {/* Row 3: Logo & Copyright */}
-        <div className="flex flex-col sm:flex-row items-end justify-between border-t border-white py-4 lg:pt-8">
+        <div className="flex items-end justify-between border-t border-white py-4 lg:pt-8">
           <div>
             <WLogo />
           </div>
