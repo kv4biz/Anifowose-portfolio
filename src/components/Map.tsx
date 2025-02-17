@@ -10,7 +10,7 @@ const Map = () => {
     <div className="flex flex-col py-10 w-full overflow-hidden">
       {/* WorldMap */}
       <motion.div
-        variants={titleVariants("down")}
+        variants={titleVariants("up")}
         initial="offscreen"
         whileInView="onscreen"
         viewport={{ once: true }}

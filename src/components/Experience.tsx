@@ -32,7 +32,7 @@ const Experience = () => {
         <div>
           <motion.h3
             className="title"
-            variants={titleVariants("down")}
+            variants={titleVariants("up")}
             initial="offscreen"
             whileInView="onscreen"
             viewport={{ once: true }}

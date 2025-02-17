@@ -39,7 +39,7 @@ const Education = () => {
         <div className="w-full lg:w-1/2 py-3 px-2">
           <motion.h2
             className="title mb-4 lg:mb-8 text-center lg:text-left"
-            variants={titleVariants("down")}
+            variants={titleVariants("up")}
             initial="offscreen"
             whileInView="onscreen"
             viewport={{ once: true }}
@@ -51,7 +51,7 @@ const Education = () => {
             {educationData.map((edu, index) => (
               <motion.div
                 key={index}
-                variants={tagVariants("right")}
+                variants={tagVariants("up")}
                 initial="offscreen"
                 whileInView="onscreen"
                 viewport={{ once: true }}
@@ -74,7 +74,7 @@ const Education = () => {
         {/* Right Side: Image (visible only on desktop) */}
         <div className="hidden lg:block w-full lg:w-1/2 right-0">
           <motion.div
-            variants={imgVariant("left")}
+            variants={imgVariant("up")}
             initial="offscreen"
             whileInView="onscreen"
             viewport={{ once: true }}

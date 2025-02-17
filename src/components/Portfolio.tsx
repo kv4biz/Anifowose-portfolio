@@ -51,7 +51,7 @@ const Portfolio: React.FC = () => {
         <div className="text-center mb-10">
           <motion.h1
             className="title text-3xl font-bold mb-2"
-            variants={titleVariants("down")}
+            variants={titleVariants("up")}
             initial="offscreen"
             whileInView="onscreen"
             viewport={{ once: true }}
@@ -61,7 +61,7 @@ const Portfolio: React.FC = () => {
           </motion.h1>
           <motion.p
             className="text-gray-700 text-sm"
-            variants={desVariants("down")}
+            variants={desVariants("up")}
             initial="offscreen"
             whileInView="onscreen"
             viewport={{ once: true }}

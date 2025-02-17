@@ -17,7 +17,7 @@ const About = () => {
         <div className="flex flex-col gap-3 lg:gap-5 lg:w-2/3">
           <motion.h2
             className="title2 text-2xl text-center lg:text-left"
-            variants={titleVariants("right")}
+            variants={titleVariants("up")}
             initial="offscreen"
             whileInView="onscreen"
             viewport={{ once: true }}
@@ -27,7 +27,7 @@ const About = () => {
           </motion.h2>
           <motion.h3
             className="title3 text-center lg:text-left"
-            variants={tagVariants("right")}
+            variants={tagVariants("up")}
             initial="offscreen"
             whileInView="onscreen"
             viewport={{ once: true }}
@@ -37,7 +37,7 @@ const About = () => {
           </motion.h3>
           <div className="flex flex-col gap-3 font-roboto font-regular text-sm lg:text-[16px]">
             <motion.p
-              variants={desVariants("right")}
+              variants={desVariants("up")}
               initial="offscreen"
               whileInView="onscreen"
               viewport={{ once: true }}
@@ -52,7 +52,7 @@ const About = () => {
             </motion.p>
             <div className="hidden lg:flex flex-col gap-3">
               <motion.p
-                variants={desVariants("right")}
+                variants={desVariants("up")}
                 initial="offscreen"
                 whileInView="onscreen"
                 viewport={{ once: true }}
@@ -66,7 +66,7 @@ const About = () => {
                 and achieve targets, even in high-pressure environments.
               </motion.p>
               <motion.p
-                variants={desVariants("right")}
+                variants={desVariants("up")}
                 initial="offscreen"
                 whileInView="onscreen"
                 viewport={{ once: true }}
@@ -80,7 +80,7 @@ const About = () => {
                 added value to the organizations I served.
               </motion.p>
               <motion.p
-                variants={desVariants("right")}
+                variants={desVariants("up")}
                 initial="offscreen"
                 whileInView="onscreen"
                 viewport={{ once: true }}
@@ -98,7 +98,7 @@ const About = () => {
         {/* Right Column: Image */}
         <div className="flex flex-col gap-10 lg:w-1/3 lg:max-w-xl">
           <motion.div
-            variants={imgVariant("left")}
+            variants={imgVariant("up")}
             initial="offscreen"
             whileInView="onscreen"
             viewport={{ once: true }}

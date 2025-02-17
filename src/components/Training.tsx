@@ -27,7 +27,7 @@ const Trainings = () => {
       <div className="max-w-4xl mx-auto">
         <motion.h2
           className="title mb-8 text-center"
-          variants={titleVariants("down")}
+          variants={titleVariants("up")}
           initial="offscreen"
           whileInView="onscreen"
           viewport={{ once: true }}

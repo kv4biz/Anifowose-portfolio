@@ -30,7 +30,7 @@ const Feedback = () => {
         {/* Section Title */}
         <motion.h2
           className="title text-center mb-2"
-          variants={titleVariants("down")}
+          variants={titleVariants("up")}
           initial="offscreen"
           whileInView="onscreen"
           viewport={{ once: true }}
@@ -40,7 +40,7 @@ const Feedback = () => {
         </motion.h2>
         <motion.p
           className="text-center font-roboto text-gray-600 mb-8"
-          variants={desVariants("down")}
+          variants={desVariants("up")}
           initial="offscreen"
           whileInView="onscreen"
           viewport={{ once: true }}

@@ -42,7 +42,7 @@ const Contact: React.FC = () => {
         <div className="max-w-xl font-roboto">
           <motion.h2
             className="text-2xl lg:text-3xl font-bold text-gray-500"
-            variants={titleVariants("right")}
+            variants={titleVariants("up")}
             initial="offscreen"
             whileInView="onscreen"
             viewport={{ once: true }}
@@ -52,7 +52,7 @@ const Contact: React.FC = () => {
           </motion.h2>
           <motion.p
             className="mt-2 text-sm font-light text-gray-700"
-            variants={desVariants("right")}
+            variants={desVariants("up")}
             initial="offscreen"
             whileInView="onscreen"
             viewport={{ once: true }}
@@ -63,7 +63,7 @@ const Contact: React.FC = () => {
         </div>
         <motion.div
           className="mt-6 lg:mt-0"
-          variants={tagVariants("left")}
+          variants={tagVariants("up")}
           initial="offscreen"
           whileInView="onscreen"
           viewport={{ once: true }}
@@ -84,7 +84,7 @@ const Contact: React.FC = () => {
         <div className="lg:w-1/2">
           <motion.h3
             className="text-2xl font-bold mb-4 text-gray-700"
-            variants={titleVariants("right")}
+            variants={titleVariants("up")}
             initial="offscreen"
             whileInView="onscreen"
             viewport={{ once: true }}
@@ -94,7 +94,7 @@ const Contact: React.FC = () => {
           </motion.h3>
           <motion.div
             className="flex max-w-sm"
-            variants={desVariants("right")}
+            variants={desVariants("up")}
             initial="offscreen"
             whileInView="onscreen"
             viewport={{ once: true }}
@@ -110,7 +110,7 @@ const Contact: React.FC = () => {
               <motion.div
                 key={detail.id}
                 className="flex items-center space-x-4"
-                variants={tagVariants("right")}
+                variants={tagVariants("up")}
                 initial="offscreen"
                 whileInView="onscreen"
                 viewport={{ once: true }}
@@ -137,7 +137,7 @@ const Contact: React.FC = () => {
         {/* Right Column: Contact Form */}
         <motion.div
           className="lg:w-1/2 mx-5"
-          variants={imgVariant("left")}
+          variants={imgVariant("up")}
           initial="offscreen"
           whileInView="onscreen"
           viewport={{ once: true }}

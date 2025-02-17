@@ -115,7 +115,7 @@ const Hero = () => {
             className="-top-20 -right-24"
           />
           <motion.div
-            variants={imgVariant("down")}
+            variants={imgVariant("up")}
             initial="offscreen"
             whileInView="onscreen"
             viewport={{ once: true }}

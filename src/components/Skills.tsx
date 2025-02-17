@@ -30,7 +30,7 @@ const Skills = () => {
         <div className="flex flex-col gap-4 max-w-2xl items-center justify-center text-center">
           <motion.h2
             className="title"
-            variants={titleVariants("down")}
+            variants={titleVariants("up")}
             initial="offscreen"
             whileInView="onscreen"
             viewport={{ once: true }}
