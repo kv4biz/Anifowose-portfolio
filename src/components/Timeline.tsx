@@ -55,7 +55,7 @@ export const Timeline: React.FC<TimelineProps> = ({ events }) => {
           // Alternate sides for each event.
           const isLeft = index % 2 === 0;
           return (
-            <div key={index} className="relative py-12 lg:py-28">
+            <div key={index} className="relative py-24 lg:py-32">
               {/* Dot marker positioned on the timeline */}
               <div className="absolute top-0 left-1/2 transform -translate-x-1/2">
                 <div className="w-6 h-6 rounded-full bg-white border-2 border-blue-500" />
