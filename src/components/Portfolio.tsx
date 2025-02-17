@@ -4,7 +4,6 @@ import React from "react";
 import { motion } from "framer-motion";
 import { titleVariants, tagVariants, desVariants } from "@/utils/animation";
 
-// Extend the document interface to include description and date.
 interface DocumentItem {
   id: number;
   name: string;
@@ -13,7 +12,6 @@ interface DocumentItem {
   date: string;
 }
 
-// Updated documents array with description and date for each document.
 const documents: DocumentItem[] = [
   {
     id: 1,
