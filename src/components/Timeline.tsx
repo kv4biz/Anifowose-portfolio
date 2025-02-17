@@ -42,7 +42,7 @@ export const Timeline: React.FC<TimelineProps> = ({ events }) => {
       className="relative flex w-full py-10 mx-auto overflow-hidden font-roboto"
     >
       {/* Vertical timeline line */}
-      <div className="absolute top-0 h-full w-[2px] bg-gray-300 left-0 md:left-1/2 md:transform md:-translate-x-1/2">
+      <div className="absolute top-0 h-full w-[2px] bg-gray-300 left-1/2 transform -translate-x-1/2">
         <motion.div
           style={{ height: heightTransform, opacity: opacityTransform }}
           className="absolute top-0 w-[2px] bg-gradient-to-t from-[#C3910A] via-blue-500 to-transparent rounded-full"
@@ -52,55 +52,37 @@ export const Timeline: React.FC<TimelineProps> = ({ events }) => {
       {/* Timeline events container */}
       <div className="max-w-4xl mx-auto relative">
         {events.map((event, index) => {
-          // For desktop: alternate sides; for mobile: all events on the right.
+          // Alternate sides for each event.
           const isLeft = index % 2 === 0;
           return (
             <div key={index} className="relative py-12 lg:py-28">
               {/* Dot marker positioned on the timeline */}
-              <div className="absolute top-0 left-0 md:left-1/2 md:transform md:-translate-x-1/2">
+              <div className="absolute top-0 left-1/2 transform -translate-x-1/2">
                 <div className="w-6 h-6 rounded-full bg-white border-2 border-blue-500" />
               </div>
 
-              {/* Desktop layout: alternate sides */}
-              <div className="hidden md:block">
-                <motion.div
-                  variants={tagVariants("up")}
-                  initial="offscreen"
-                  whileInView="onscreen"
-                  viewport={{ once: true }}
-                  transition={{ delay: index * 1 }}
-                >
-                  {isLeft ? (
-                    <div className="w-1/2 pr-8 text-right">
-                      <h3 className="text-xl font-bold text-gray-800">
-                        {event.title}
-                      </h3>
-                      <p className="text-sm text-gray-600">{event.period}</p>
-                    </div>
-                  ) : (
-                    <div className="w-1/2 pl-8 text-left ml-auto">
-                      <h3 className="text-xl font-bold text-gray-800">
-                        {event.title}
-                      </h3>
-                      <p className="text-sm text-gray-600">{event.period}</p>
-                    </div>
-                  )}
-                </motion.div>
-              </div>
-
-              {/* Mobile layout: event content aligned to the right */}
               <motion.div
-                className="flex flex-col md:hidden max-w-md -mt-12 text-right"
                 variants={tagVariants("up")}
                 initial="offscreen"
                 whileInView="onscreen"
                 viewport={{ once: true }}
                 transition={{ delay: index * 1 }}
               >
-                <h3 className="text-lg font-bold text-gray-800">
-                  {event.title}
-                </h3>
-                <p className="text-sm text-gray-600">{event.period}</p>
+                {isLeft ? (
+                  <div className="w-1/2 pr-2 lg:pr-8 text-right">
+                    <h3 className="lg:text-xl text-[16px] font-semibold lg:font-bold text-gray-800">
+                      {event.title}
+                    </h3>
+                    <p className="text-sm text-gray-600">{event.period}</p>
+                  </div>
+                ) : (
+                  <div className="w-1/2 pl-2 lg:pl-8 text-left ml-auto">
+                    <h3 className="lg:text-xl text-[16px] font-semibold lg:font-bold text-gray-800">
+                      {event.title}
+                    </h3>
+                    <p className="text-sm text-gray-600">{event.period}</p>
+                  </div>
+                )}
               </motion.div>
             </div>
           );
