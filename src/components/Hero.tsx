@@ -11,41 +11,8 @@ import {
   desVariants,
   imgVariant,
 } from "@/utils/animation";
-import {
-  FaFacebookF,
-  FaLinkedinIn,
-  FaInstagram,
-  FaTwitter,
-  FaYoutube,
-} from "react-icons/fa";
+import { socialLinks } from "@/constant/socials";
 
-const socialLinks = [
-  {
-    name: "Facebook",
-    icon: <FaFacebookF size={20} />,
-    url: "https://facebook.com",
-  },
-  {
-    name: "Linkedin",
-    icon: <FaLinkedinIn size={20} />,
-    url: "https://linkedin.com",
-  },
-  {
-    name: "Instagram",
-    icon: <FaInstagram size={20} />,
-    url: "https://instagram.com",
-  },
-  {
-    name: "Twitter",
-    icon: <FaTwitter size={20} />,
-    url: "https://twitter.com",
-  },
-  {
-    name: "Youtube",
-    icon: <FaYoutube size={20} />,
-    url: "https://youtube.com",
-  },
-];
 const Hero = () => {
   return (
     <div className="flex w-full">
@@ -63,7 +30,7 @@ const Hero = () => {
             whileInView="onscreen"
             viewport={{ once: true }}
           >
-            Hello Mate
+            Hello
           </motion.p>
           <motion.h1
             className="text-2xl tracking-tight"
@@ -91,18 +58,21 @@ const Hero = () => {
             </p>
           </motion.div>
           <div className="flex space-x-4 mt-6">
-            {socialLinks.map((social, index) => (
-              <a
-                key={index}
-                href={social.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-10 h-10 flex items-center justify-center rounded-full bg-[#000080] text-white hover:bg-white hover:text-[#000080] hover:border hover:border-[#000080] transition-colors"
-                aria-label={social.name}
-              >
-                {social.icon}
-              </a>
-            ))}
+            {socialLinks.map((social, index) => {
+              const IconComponent = social.icon;
+              return (
+                <a
+                  key={index}
+                  href={social.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-10 h-10 flex items-center justify-center rounded-full bg-[#000080] text-white hover:bg-white hover:text-[#000080] hover:border hover:border-[#000080] transition-colors"
+                  aria-label={social.name}
+                >
+                  <IconComponent size={20} />
+                </a>
+              );
+            })}
           </div>
         </div>
 
@@ -154,7 +124,7 @@ const Hero = () => {
             viewport={{ once: true }}
           >
             <hr className="border-t w-16 border-white" />
-            <p className="px-4 title2 text-4xl text-white">Hello Mate</p>
+            <p className="px-4 title2 text-4xl text-white">Hello</p>
           </motion.div>
           <motion.h1
             className="text-2xl tracking-tight text-white"
@@ -182,18 +152,21 @@ const Hero = () => {
             </p>
           </motion.div>
           <div className="flex space-x-4 mt-6 justify-center">
-            {socialLinks.map((social, index) => (
-              <a
-                key={index}
-                href={social.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-10 h-10 flex items-center justify-center rounded-full bg-white text-[#000080] hover:bg-[#000080] hover:text-white hover:border hover:border-[#000080] transition-colors"
-                aria-label={social.name}
-              >
-                {social.icon}
-              </a>
-            ))}
+            {socialLinks.map((social, index) => {
+              const IconComponent = social.icon;
+              return (
+                <a
+                  key={index}
+                  href={social.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-10 h-10 flex items-center justify-center rounded-full bg-white text-[#000080] hover:bg-[#000080] hover:text-white hover:border hover:border-[#000080] transition-colors"
+                  aria-label={social.name}
+                >
+                  <IconComponent size={20} />
+                </a>
+              );
+            })}
           </div>
         </div>
       </section>

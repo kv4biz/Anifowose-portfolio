@@ -60,7 +60,7 @@ const Skills = () => {
               transition={{ delay: index * 1 }}
             >
               <div
-                className="flex items-center justify-center p-4 lg:px-8 bg-white border border-gray-300/40 rounded-md"
+                className="flex items-center justify-center p-4 lg:px-8 bg-white border text-center border-gray-300/40 h-20 md:h-10 rounded-md"
                 style={{ boxShadow: "-4px 4px 8px rgba(0, 0, 0, 0.1)" }}
               >
                 <p className="text-sm lg:text-[13px] font-normal">{skill}</p>
