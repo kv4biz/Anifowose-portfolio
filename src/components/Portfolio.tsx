@@ -3,7 +3,6 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { titleVariants, desVariants } from "@/utils/animation";
-import { MagicCard } from "./magicui/magic-card";
 
 const Portfolio: React.FC = () => {
   return (
