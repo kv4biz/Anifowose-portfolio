@@ -11,7 +11,8 @@ import {
   desVariants,
   imgVariant,
 } from "@/utils/animation";
-import { socialLinks } from "@/constant/socials";
+import { FaLinkedin } from "react-icons/fa6";
+import { Button } from "./ui/button";
 
 const Hero = () => {
   return (
@@ -57,22 +58,19 @@ const Hero = () => {
               and strategic financial planning.
             </p>
           </motion.div>
-          <div className="flex space-x-4 mt-6">
-            {socialLinks.map((social, index) => {
-              const IconComponent = social.icon;
-              return (
-                <a
-                  key={index}
-                  href={social.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-10 h-10 flex items-center justify-center rounded-full bg-[#000080] text-white hover:bg-white hover:text-[#000080] hover:border hover:border-[#000080] transition-colors"
-                  aria-label={social.name}
-                >
-                  <IconComponent size={20} />
-                </a>
-              );
-            })}
+          <div className="flex mt-6">
+            <Button className="h-10 flex items-center justify-center rounded-lg bg-[#000080] text-white hover:bg-white hover:text-[#000080] hover:border hover:border-[#000080] transition-colors">
+              <a
+                href=""
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="linkedIn"
+                className="flex gap-2 items-center justify-center text-sm"
+              >
+                <p>Connect with me on</p>
+                <FaLinkedin />
+              </a>
+            </Button>
           </div>
         </div>
 
@@ -151,22 +149,19 @@ const Hero = () => {
               and strategic financial planning.
             </p>
           </motion.div>
-          <div className="flex space-x-4 mt-6 justify-center">
-            {socialLinks.map((social, index) => {
-              const IconComponent = social.icon;
-              return (
-                <a
-                  key={index}
-                  href={social.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-10 h-10 flex items-center justify-center rounded-full bg-white text-[#000080] hover:bg-[#000080] hover:text-white hover:border hover:border-[#000080] transition-colors"
-                  aria-label={social.name}
-                >
-                  <IconComponent size={20} />
-                </a>
-              );
-            })}
+          <div className="flex  mt-6 justify-center">
+            <Button className="h-10 flex items-center justify-center rounded-lg bg-white text-[#000080] hover:bg-transparent hover:text-white hover:border hover:border-white transition-colors">
+              <a
+                href=""
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="linkedIn"
+                className="flex gap-2 items-center justify-center text-sm"
+              >
+                <p>Connect with me on</p>
+                <FaLinkedin />
+              </a>
+            </Button>
           </div>
         </div>
       </section>

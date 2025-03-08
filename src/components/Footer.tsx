@@ -2,7 +2,8 @@
 "use client";
 import React from "react";
 import WLogo from "./WLogo";
-import { socialLinks } from "@/constant/socials";
+import { Button } from "./ui/button";
+import { FaLinkedin } from "react-icons/fa6";
 
 const Footer = () => {
   return (
@@ -14,22 +15,19 @@ const Footer = () => {
             <WLogo />
           </div>
           <div>
-            <div className="flex space-x-4 lg:space-x-8 mt-5 my-3 justify-center">
-              {socialLinks.map((social, index) => {
-                const IconComponent = social.icon;
-                return (
-                  <a
-                    key={index}
-                    href={social.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="w-8 h-8 flex items-center justify-center rounded-full bg-white text-[#000080] hover:bg-[#000080] hover:text-white hover:border hover:border-[#ffffff] transition-colors"
-                    aria-label={social.name}
-                  >
-                    <IconComponent size={16} />
-                  </a>
-                );
-              })}
+            <div className="flex my-3 justify-center">
+              <Button className="h-10 flex items-center justify-center rounded-lg bg-white text-[#000080] hover:bg-[#000080] hover:text-white hover:border hover:border-white transition-colors">
+                <a
+                  href=""
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="linkedIn"
+                  className="flex gap-2 items-center justify-center"
+                >
+                  <p className="text-sm">Connect with me on</p>
+                  <FaLinkedin />
+                </a>
+              </Button>
             </div>
           </div>
         </div>

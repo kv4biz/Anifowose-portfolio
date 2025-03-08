@@ -6,22 +6,25 @@ import { motion } from "framer-motion";
 import { titleVariants } from "@/utils/animation";
 
 const timelineData: TimelineEvent[] = [
-  { title: "Financial Officer", period: "2008 - 2009" },
   {
-    title: "Financial Control and Strategic Planning - Trainee",
-    period: "2014 - 2020",
+    title: "MSc. Student, International Business, University of Hertfordshire",
+    period: "2022 - 2024",
   },
   {
-    title: "Financial Reporting Specialist and Management Accountant",
-    period: "2014 - 2020",
-  },
-  {
-    title: "Senior Financial Officer",
+    title: "Senior Finance Manager",
     period: "2020 - 2022",
   },
   {
-    title: "MSc. Student, International Business, University of Hertfordshire",
-    period: "2022 - present",
+    title: "Management Accountant",
+    period: "2014 - 2020",
+  },
+  {
+    title: "Finance Officer",
+    period: "2011 - 2014",
+  },
+  {
+    title: "Finance Trainee",
+    period: "2009 - 2011",
   },
 ];
 
