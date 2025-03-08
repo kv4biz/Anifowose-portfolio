@@ -16,15 +16,14 @@ const Footer = () => {
           </div>
           <div>
             <div className="flex my-3 justify-center">
-              <Button className="h-10 flex items-center justify-center rounded-lg bg-white text-[#000080] hover:bg-[#000080] hover:text-white hover:border hover:border-white transition-colors">
+              <Button className="h-8 w-8 flex items-center justify-center rounded-full bg-white text-[#000080] hover:bg-[#000080] hover:text-white hover:border hover:border-white transition-colors">
                 <a
-                  href=""
+                  href="https://www.linkedin.com/in/taofikanifowose/"
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="linkedIn"
                   className="flex gap-2 items-center justify-center"
                 >
-                  <p className="text-sm">Connect with me on</p>
                   <FaLinkedin />
                 </a>
               </Button>

@@ -61,7 +61,7 @@ const Hero = () => {
           <div className="flex mt-6">
             <Button className="h-10 flex items-center justify-center rounded-lg bg-[#000080] text-white hover:bg-white hover:text-[#000080] hover:border hover:border-[#000080] transition-colors">
               <a
-                href=""
+                href="https://www.linkedin.com/in/taofikanifowose/"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="linkedIn"
@@ -152,7 +152,7 @@ const Hero = () => {
           <div className="flex  mt-6 justify-center">
             <Button className="h-10 flex items-center justify-center rounded-lg bg-white text-[#000080] hover:bg-transparent hover:text-white hover:border hover:border-white transition-colors">
               <a
-                href=""
+                href="https://www.linkedin.com/in/taofikanifowose/"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="linkedIn"
