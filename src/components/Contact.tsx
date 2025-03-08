@@ -18,7 +18,7 @@ const contactDetails = [
     id: 1,
     icon: <MapPin className="w-6 h-6 text-gray-900" />,
     title: "Address",
-    text: "Luton",
+    text: "Luton, United Kingdom",
   },
   {
     id: 2,
@@ -100,9 +100,9 @@ const Contact: React.FC = () => {
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
           >
-            <p className="mb-4 lg:mb-8 text-sm font-light text-gray-600">
-              Lorem ipsum dolor sit amet. Ab harum quos non quod corrupti ut
-              possimus quam hic cumque recusandae quo ipsum fugiat ea magn.
+            <p className="mb-4 lg:mb-8 tracking-widest text-sm font-light text-gray-600">
+              Contact me for expert accounting advice and tailored financial
+              solutions.
             </p>
           </motion.div>
           <div className="flex flex-col gap-4 lg:gap-10">

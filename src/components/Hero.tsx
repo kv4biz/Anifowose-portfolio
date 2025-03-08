@@ -51,10 +51,10 @@ const Hero = () => {
             whileInView="onscreen"
             viewport={{ once: true }}
           >
-            <p className="text-sm text-gray-600">
-              Donec quam felis, ultricies nec, pellentesque eu, pretium quis,
-              sem. Nulla consequat massa quis enim. Donec pede justo, fringilla
-              vel, aliquet nec, vulputate eget, arcu.
+            <p className="text-sm tracking-wider text-gray-600">
+              A results-driven finance professional with extensive experience in
+              financial accounting, financial management, financial modelling
+              and strategic financial planning.
             </p>
           </motion.div>
           <div className="flex space-x-4 mt-6">
@@ -145,10 +145,10 @@ const Hero = () => {
             whileInView="onscreen"
             viewport={{ once: true }}
           >
-            <p className="text-sm text-white">
-              Donec quam felis, ultricies nec, pellentesque eu, pretium quis,
-              sem. Nulla consequat massa quis enim. Donec pede justo, fringilla
-              vel, aliquet nec, vulputate eget, arcu.
+            <p className="text-sm tracking-wide text-white">
+              A results-driven finance professional with extensive experience in
+              financial accounting, financial management, financial modelling
+              and strategic financial planning.
             </p>
           </motion.div>
           <div className="flex space-x-4 mt-6 justify-center">

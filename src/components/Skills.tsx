@@ -5,22 +5,22 @@ import { motion } from "framer-motion";
 import { tagVariants, titleVariants, desVariants } from "@/utils/animation";
 
 const skills = [
-  "Compliance Management",
+  "Financial Accounting",
+  "Financial Management",
+  "Financial Analysis",
+  "Financial Modelling",
+  "Corporate Finance",
+  "Management Accounting",
   "Budgeting",
   "Business Strategy",
-  "Corporate Finance",
-  "Financial Accounting",
-  "Financial Analysis",
-  "Financial Management",
-  "Financial Modelling",
+  "Business Strategy",
   "Financial Strategy",
-  "Forecasting",
-  "Management Accounting",
   "Project Finance",
-  "Risk Management",
-  "Various Analysis",
   "Strategic Planning",
+  "Risk Management",
   "Regulatory Compliance",
+  "Variance Analysis",
+  "Forecasting",
 ];
 
 const Skills = () => {

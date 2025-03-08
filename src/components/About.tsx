@@ -45,7 +45,7 @@ const About = () => {
             >
               I am an experienced finance professional with over 12 years of
               expertise in financial analysis, strategic financial planning, and
-              management accounting. My skill set includes economic modeling,
+              management accounting. My skill set includes financial modelling,
               investment analysis, budgeting, forecasting, payroll management,
               tax compliance, financial reporting systems, account management,
               and operations.
@@ -58,10 +58,10 @@ const About = () => {
                 viewport={{ once: true }}
                 transition={{ delay: 0.4 }}
               >
-                As a finance leader, I excel in driving strategic financial
+                As a finance leader, I specialise in driving strategic financial
                 planning, ensuring robust budget management and financial
                 control, and translating complex financial data into actionable
-                insights that fuel business growth. My detail-orientated,
+                insights to fuel business growth. My detail-orientated,
                 results-driven approach allows me to consistently meet deadlines
                 and achieve targets, even in high-pressure environments.
               </motion.p>
@@ -73,11 +73,9 @@ const About = () => {
                 transition={{ delay: 0.6 }}
               >
                 Key achievements include implementing a cost-reduction strategy
-                that lowered operational expenses by 5–10% and optimising the
+                that lowered operational expenses by 5% - 10% and optimising the
                 month-end closing process, reducing completion time by 80% to
-                enhance reporting speed and accuracy. My ability to anticipate
-                challenges and deliver innovative solutions has consistently
-                added value to the organizations I served.
+                enhance reporting speed and accuracy.
               </motion.p>
               <motion.p
                 variants={desVariants("up")}
@@ -86,11 +84,13 @@ const About = () => {
                 viewport={{ once: true }}
                 transition={{ delay: 0.7 }}
               >
-                With strong interpersonal skills, I foster collaborative
+                My ability to anticipate challenges and deliver innovative
+                solutions has consistently added value to the organisations I
+                served. With strong interpersonal skills, I foster collaborative
                 relationships across functions, enabling seamless project
                 execution and promoting a culture of continuous improvement. My
-                commitment to delivering results and a data-driven mindset drive
-                sustainable growth and long-term profitability.
+                commitment to delivering results, combined with a data-driven
+                mindset, drives sustainable growth and long-term profitability.
               </motion.p>
             </div>
           </div>
@@ -123,10 +123,10 @@ const About = () => {
               viewport={{ once: true }}
               transition={{ delay: 0.5 }}
             >
-              As a finance leader, I excel in driving strategic financial
+              As a finance leader, I specialise in driving strategic financial
               planning, ensuring robust budget management and financial control,
-              and translating complex financial data into actionable insights
-              that fuel business growth. My detail-orientated, results-driven
+              and translating complex financial data into actionable insights to
+              fuel business growth. My detail-orientated, results-driven
               approach allows me to consistently meet deadlines and achieve
               targets, even in high-pressure environments.
             </motion.p>
@@ -138,11 +138,9 @@ const About = () => {
               transition={{ delay: 0.6 }}
             >
               Key achievements include implementing a cost-reduction strategy
-              that lowered operational expenses by 5–10% and optimising the
+              that lowered operational expenses by 5% - 10% and optimising the
               month-end closing process, reducing completion time by 80% to
-              enhance reporting speed and accuracy. My ability to anticipate
-              challenges and deliver innovative solutions has consistently added
-              value to the organizations I served.
+              enhance reporting speed and accuracy.
             </motion.p>
             <motion.p
               variants={desVariants("up")}
@@ -151,11 +149,13 @@ const About = () => {
               viewport={{ once: true }}
               transition={{ delay: 0.7 }}
             >
-              With strong interpersonal skills, I foster collaborative
+              My ability to anticipate challenges and deliver innovative
+              solutions has consistently added value to the organisations I
+              served. With strong interpersonal skills, I foster collaborative
               relationships across functions, enabling seamless project
               execution and promoting a culture of continuous improvement. My
-              commitment to delivering results and a data-driven mindset drive
-              sustainable growth and long-term profitability.
+              commitment to delivering results, combined with a data-driven
+              mindset, drives sustainable growth and long-term profitability.
             </motion.p>
           </div>
         </div>

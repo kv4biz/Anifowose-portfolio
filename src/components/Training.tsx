@@ -5,20 +5,14 @@ import { motion } from "framer-motion";
 import { titleVariants, tagVariants } from "@/utils/animation";
 
 const trainingList = [
-  "Corporate Finance Institute® (CFI)Corporate Finance Institute® (CFI)",
+  "Corporate Finance Institute® (CFI) - Introduction to 3-Statement Modelling, Introduction to Business Modelling, Financial Analysis Fundamentals, Introduction to Business Intelligence",
   "International Financial Reporting Standard (IFRS) (ICAN) August 2018",
-  "Introduction to 3-Statement Modeling",
-  "Introduction to Business Modeling",
-  "Financial Analysis Fundamentals",
-  "Introduction to Business Intelligence",
-  "Budgetary Control & Forecasting, Pan Atlantic University Lagos",
-  "Business School August 2019",
-  "Business Communication University of Hertfordshire Jan. 2023",
-  "AML Essentials: Anti Money Laundering, KYC and Compliance Jan. 2023",
-  "QuickBooks Online Certified ProAdvisor August 2023",
-  "Xero Advisor Certified – October 2023",
-  "Xero Payroll Certified April 2024",
-  "FCA – (Fellow Chartered Accountant) Institute of Chartered Accountants of Nigeria May 2024",
+  "Budgetary Control & Forecasting, Pan Atlantic University Lagos Business School, August 2019",
+  "Business Communication, University of Hertfordshire Jan. 2023",
+  "AML Essentials: Anti-Money Laundering, KYC and Compliance Financial Crime Academy Jan. 2023",
+  "QuickBooks Online Certified ProAdvisor, August 2023",
+  "Xero Advisor Certified - October 2023, Xero Payroll Certified April 2024",
+  "FCA - (Fellow Chartered Accountant), Institute of Chartered Accountants of Nigeria May 2024",
 ];
 
 const Trainings = () => {
@@ -35,7 +29,7 @@ const Trainings = () => {
         >
           Trainings & Certifications
         </motion.h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 font-roboto">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 font-roboto">
           {trainingList.map((training, index) => (
             <motion.div
               key={index}

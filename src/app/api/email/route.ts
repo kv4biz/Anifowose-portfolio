@@ -19,7 +19,7 @@ export async function POST(request: Request) {
 
     const mailOptions = {
       from: process.env.EMAIL_PASS || email,
-      to: "kv4biz@gmail.com",
+      to: "kv4biz@gmail.com, taofiqanney@gmail.com",
       subject: "New Contact Form Submission",
       text: `You have received a new message from your portfolio built by NXTFLO.\n\nName: ${name}\nEmail: ${email}\nMessage:\n${message}`,
       html: `
